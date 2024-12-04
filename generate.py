@@ -78,7 +78,7 @@ usage_dict = {
 st.write("## Hello, world!")
 
 if st.button("Send Request"):
-    completion = client.chat.completions.create(
+    completion = openai_client.chat.completions.create(
     model="gpt-4o-mini",
     messages=[
         {"role": "system", "content": "You are a helpful assistant."},
