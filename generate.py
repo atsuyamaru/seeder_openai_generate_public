@@ -1,13 +1,13 @@
 import streamlit as st
 import time
 
-### --- Import for Notion --- ###
-from notion_client import Client
+# ### --- Import for Notion --- ###
+# from notion_client import Client
 
-# Import My functions for Notion
-from my_functions.notion_func_get import get_all_pages_info_from_db_id, get_page_info_from_its_page_id
-from my_functions.notion_func_update import update_scenes_on_nano_db
-from my_functions.notion_func_post import create_persona_on_persona_db, create_idea_on_idea_db
+# # Import My functions for Notion
+# from my_functions.notion_func_get import get_all_pages_info_from_db_id, get_page_info_from_its_page_id
+# from my_functions.notion_func_update import update_scenes_on_nano_db
+# from my_functions.notion_func_post import create_persona_on_persona_db, create_idea_on_idea_db
 
 # ## If run on local, load the environment variables
 # # Load Environment Variables
@@ -19,33 +19,33 @@ from my_functions.notion_func_post import create_persona_on_persona_db, create_i
 ### --- Import for OpenAI Generation --- ###
 from openai import OpenAI
 
-# Import Schema for OpenAI generation outputs
-from my_functions.openai_structured_schema import Scenes, Personas, Idea, RighteousIndignation, AppealMethod
+# # Import Schema for OpenAI generation outputs
+# from my_functions.openai_structured_schema import Scenes, Personas, Idea, RighteousIndignation, AppealMethod
 
-# Import My functions for OpenAI generation
-from my_functions.openai_func import generate_contents
+# # Import My functions for OpenAI generation
+# from my_functions.openai_func import generate_contents
 
 ### --- End of Import for OpenAI --- ###
 
 ### --- Streamlit Settings and Session State --- ###
-# Import My functions for Streamlit
-from my_functions.streamlit_util_func import read_json_file
-# Import My functions for Session State
-from my_functions.session_state_st import initialize_session_state, load_default_values, clear_session_state_for_overwrite_confirmation
+# # Import My functions for Streamlit
+# from my_functions.streamlit_util_func import read_json_file
+# # Import My functions for Session State
+# from my_functions.session_state_st import initialize_session_state, load_default_values, clear_session_state_for_overwrite_confirmation
 
 # Set the page config
 st.set_page_config(
     page_title="コンテンツ生成",
     page_icon="🚀")
 
-## Initialize Session State
-# Load Default Values
-default_values = load_default_values()
-# Initialize Session State
-initialize_session_state(default_values)
-# Clear Session State for Confirmation
-clear_session_state_for_overwrite_confirmation()
-### --- End of Streamlit Settings and Session State --- ###
+# ## Initialize Session State
+# # Load Default Values
+# default_values = load_default_values()
+# # Initialize Session State
+# initialize_session_state(default_values)
+# # Clear Session State for Confirmation
+# clear_session_state_for_overwrite_confirmation()
+# ### --- End of Streamlit Settings and Session State --- ###
 
 
 ## Set API Clients
