@@ -77,6 +77,10 @@ usage_dict = {
 
 st.write("## Hello, world!")
 
+if st.button("Send Request"):
+    response = openapi_client(model="gpt-4o-mini", messages={"role": "user", "content": "Hello, world!"})
+    st.write(response)
+
 # ## Define Database IDs as constants: Notion DB IDs
 # # Subclass DB ID: 細分類DB_ID
 # SUBCLASS_DB_ID = st.secrets["SUBCLASS_DB_ID"]
