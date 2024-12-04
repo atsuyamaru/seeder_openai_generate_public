@@ -78,7 +78,7 @@ usage_dict = {
 st.write("## Hello, world!")
 
 if st.button("Send Request"):
-    response = openai_client(model="gpt-4o-mini", messages={"role": "user", "content": "Hello, world!"})
+    response = openai_client.beta.chat.completions.parse(model="gpt-4o-mini", messages={"role": "user", "content": "Hello, world!"})
     st.write(response)
 
 # ## Define Database IDs as constants: Notion DB IDs
