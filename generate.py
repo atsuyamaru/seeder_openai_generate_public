@@ -53,7 +53,7 @@ clear_session_state_for_overwrite_confirmation()
 openai_client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 
 # Notion client
-notion_client = Client(auth=st.secrets["NOTION_TOKEN"])
+# notion_client = Client(auth=st.secrets["NOTION_TOKEN"])
 
 
 ## Settings for OpenAI
@@ -86,7 +86,7 @@ IDEA_DB_ID = st.secrets["IDEA_DB_ID"]
 
 # Get the subclass pages info
 # 後でフィルタをかけたうえで取得に改修（「生成済」カラムにチェックが入っていないページのみ取得_）
-subclass_pages_info = get_all_pages_info_from_db_id(notion_client, SUBCLASS_DB_ID)
+# subclass_pages_info = get_all_pages_info_from_db_id(notion_client, SUBCLASS_DB_ID)
 
 ## Store the subclass ids and titles （細分類）
 # Structure of subclass_ids_and_titles: 
