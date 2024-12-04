@@ -78,8 +78,18 @@ usage_dict = {
 st.write("## Hello, world!")
 
 if st.button("Send Request"):
-    response = openai_client.beta.chat.completions.parse(model="gpt-4o-2024-08-06", messages={"role": "user", "content": "Hello, world!"})
-    st.write(response)
+    completion = client.chat.completions.create(
+    model="gpt-4o-mini",
+    messages=[
+        {"role": "system", "content": "You are a helpful assistant."},
+        {
+            "role": "user",
+            "content": "Write a haiku about recursion in programming."
+        }
+    ]
+    )
+
+    st.write(completion.choices[0].message)
 
 # ## Define Database IDs as constants: Notion DB IDs
 # # Subclass DB ID: 細分類DB_ID
